@@ -29,6 +29,10 @@ android {
             java.srcDirs += 'src/test/kotlin'
         }
     }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
 }
 
 dependencies {
