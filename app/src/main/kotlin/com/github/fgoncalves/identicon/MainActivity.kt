@@ -4,7 +4,9 @@ import android.Manifest
 import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.databinding.Observable
+import android.os.Build
 import android.os.Bundle
+import android.support.v4.content.ContextCompat
 import android.support.v4.view.MenuItemCompat
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
@@ -28,6 +30,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val binding: ActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         val viewModel = MainViewModelImpl(this, IdenticonImpl())
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            window.statusBarColor = ContextCompat.getColor(this, R.color.darkslategray)
+        }
 
         binding.viewModel = viewModel
 

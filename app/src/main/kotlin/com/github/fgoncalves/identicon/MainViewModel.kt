@@ -9,6 +9,8 @@ import android.graphics.Bitmap
 import android.net.Uri
 import android.util.Log
 import android.view.View
+import android.view.inputmethod.EditorInfo
+import android.widget.TextView
 import com.github.fgoncalves.identicon.lib.Identicon
 import io.reactivex.android.schedulers.AndroidSchedulers
 
@@ -26,6 +28,8 @@ interface MainViewModel {
 
     val shareIntent: ObservableField<Intent?>
 
+    val editorActionListener: TextView.OnEditorActionListener
+
     fun onGenerateButtonClicked(view: View)
 }
 
@@ -38,8 +42,22 @@ class MainViewModelImpl(
     override val text = ObservableField<String>("")
     override val generateButtonEnabled = ObservableBoolean(true)
     override val shareIntent = ObservableField<Intent?>(null)
+    override val editorActionListener = TextView.OnEditorActionListener { textView, actionId, _ ->
+        when (actionId) {
+            EditorInfo.IME_ACTION_DONE -> {
+                KeyboardUtils.hideKeyboard(textView)
+                generateIdenticon()
+                true
+            }
+            else -> false
+        }
+    }
 
     override fun onGenerateButtonClicked(view: View) {
+        generateIdenticon()
+    }
+
+    private fun generateIdenticon() {
         generateState()
         identicon.generate(text.get())
                 .observeOn(AndroidSchedulers.mainThread())
