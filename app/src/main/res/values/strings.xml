@@ -4,4 +4,7 @@
     <string name="generate">generate</string>
     <string name="idention_hint">identicon name</string>
     <string name="share">Share</string>
+    <string name="oops">Oops</string>
+    <string name="no_permissions">This app doesn\'t work without the permission to write to external storage</string>
+    <string name="ok">ok</string>
 </resources>

@@ -1,15 +1,19 @@
 package com.github.fgoncalves.identicon
 
+import android.Manifest
 import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.databinding.Observable
 import android.os.Bundle
 import android.support.v4.view.MenuItemCompat
+import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.ShareActionProvider
 import android.view.Menu
 import com.github.fgoncalves.identicon.databinding.ActivityMainBinding
 import com.github.fgoncalves.identicon.lib.IdenticonImpl
+import com.tbruyelle.rxpermissions2.RxPermissions
+import io.reactivex.android.schedulers.AndroidSchedulers
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -34,6 +38,23 @@ class MainActivity : AppCompatActivity() {
         })
 
         setSupportActionBar(toolbar)
+
+        RxPermissions(this)
+                .request(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(
+                        {
+                            if (!it) {
+                                AlertDialog.Builder(this@MainActivity)
+                                        .setTitle(R.string.oops)
+                                        .setMessage(R.string.no_permissions)
+                                        .setPositiveButton(R.string.ok) { _, _ ->
+                                            finish()
+                                        }
+                                        .show()
+                            }
+                        },
+                        {})
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
