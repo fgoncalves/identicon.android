@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">identicon</string>
+
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="generate">generate</string>
+    <string name="idention_hint">identicon name</string>
+</resources>

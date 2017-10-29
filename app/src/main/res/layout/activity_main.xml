@@ -1,0 +1,63 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.github.fgoncalves.identicon.MainViewModel" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/darkslategray">
+
+        <ImageView
+            android:id="@+id/identicon"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="20dp"
+            android:visibility="@{viewModel.imageVisibility}"
+            app:imageBitmap="@{viewModel.imageBitmap}"
+            app:layout_constraintBottom_toTopOf="@+id/text"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="@{viewModel.progressVisibility}"
+            app:layout_constraintBottom_toBottomOf="@+id/identicon"
+            app:layout_constraintLeft_toLeftOf="@+id/identicon"
+            app:layout_constraintRight_toRightOf="@+id/identicon"
+            app:layout_constraintTop_toTopOf="@+id/identicon" />
+
+        <EditText
+            android:id="@+id/text"
+            style="@style/EditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="@string/idention_hint"
+            android:text="@={viewModel.text}"
+            app:layout_constraintBottom_toTopOf="@+id/generate_button"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <Button
+            android:id="@+id/generate_button"
+            style="?metaButtonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:enabled="@{viewModel.generateButtonEnabled}"
+            android:text="@string/generate"
+            android:onClick="@{viewModel::onGenerateButtonClicked}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+</layout>
