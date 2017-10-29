@@ -2,7 +2,7 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimary">@color/transparent</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
@@ -22,4 +22,8 @@
         <item name="android:gravity">center_horizontal</item>
     </style>
 
+    <style name="ActionBarTheme" parent="Base.ThemeOverlay.AppCompat.Dark.ActionBar">
+    </style>
+
+    <color name="transparent">#00000000</color>
 </resources>

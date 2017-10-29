@@ -13,6 +13,17 @@
         android:layout_height="match_parent"
         android:background="@color/darkslategray">
 
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="0dp"
+            android:layout_height="?android:attr/actionBarSize"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:titleTextColor="@color/white"
+            app:theme="@style/ActionBarTheme"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <ImageView
             android:id="@+id/identicon"
             android:layout_width="0dp"
@@ -24,7 +35,7 @@
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
         <ProgressBar
             android:layout_width="wrap_content"
@@ -54,8 +65,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:enabled="@{viewModel.generateButtonEnabled}"
-            android:text="@string/generate"
             android:onClick="@{viewModel::onGenerateButtonClicked}"
+            android:text="@string/generate"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent" />
