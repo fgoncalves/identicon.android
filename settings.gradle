@@ -1,1 +1,1 @@
-include ':app', ':identiconlib'
+include ':app'

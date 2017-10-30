@@ -12,8 +12,8 @@ import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.ShareActionProvider
 import android.view.Menu
+import com.github.fgoncalves.androididenticon.identicon.IdenticonImpl
 import com.github.fgoncalves.identicon.databinding.ActivityMainBinding
-import com.github.fgoncalves.identicon.lib.IdenticonImpl
 import com.tbruyelle.rxpermissions2.RxPermissions
 import io.reactivex.android.schedulers.AndroidSchedulers
 import kotlinx.android.synthetic.main.activity_main.*

@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/identicon.iml" filepath="$PROJECT_DIR$/identicon.iml" />
-      <module fileurl="file://$PROJECT_DIR$/identiconlib/identiconlib.iml" filepath="$PROJECT_DIR$/identiconlib/identiconlib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/identicon.android.iml" filepath="$PROJECT_DIR$/identicon.android.iml" />
     </modules>
   </component>
 </project>

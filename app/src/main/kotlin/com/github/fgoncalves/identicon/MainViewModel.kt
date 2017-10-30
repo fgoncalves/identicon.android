@@ -11,7 +11,7 @@ import android.util.Log
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.widget.TextView
-import com.github.fgoncalves.identicon.lib.Identicon
+import com.github.fgoncalves.androididenticon.identicon.Identicon
 import io.reactivex.android.schedulers.AndroidSchedulers
 
 
