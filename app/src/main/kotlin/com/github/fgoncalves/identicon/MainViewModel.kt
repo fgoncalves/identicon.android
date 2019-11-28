@@ -2,9 +2,9 @@ package com.github.fgoncalves.identicon
 
 import android.content.Context
 import android.content.Intent
-import android.databinding.ObservableBoolean
-import android.databinding.ObservableField
-import android.databinding.ObservableInt
+import androidx.databinding.ObservableBoolean
+import androidx.databinding.ObservableField
+import androidx.databinding.ObservableInt
 import android.graphics.Bitmap
 import android.net.Uri
 import android.util.Log
@@ -38,10 +38,10 @@ class MainViewModelImpl(
         val identicon: Identicon) : MainViewModel {
     override val progressVisibility = ObservableInt(View.GONE)
     override val imageVisibility = ObservableInt(View.VISIBLE)
-    override val imageBitmap = ObservableField<Bitmap?>(null)
-    override val text = ObservableField<String>("")
+    override val imageBitmap = ObservableField<Bitmap?>()
+    override val text = ObservableField("")
     override val generateButtonEnabled = ObservableBoolean(true)
-    override val shareIntent = ObservableField<Intent?>(null)
+    override val shareIntent = ObservableField<Intent?>()
     override val editorActionListener = TextView.OnEditorActionListener { textView, actionId, _ ->
         when (actionId) {
             EditorInfo.IME_ACTION_DONE -> {
@@ -59,7 +59,7 @@ class MainViewModelImpl(
 
     private fun generateIdenticon() {
         generateState()
-        identicon.generate(text.get())
+        identicon.generate(text.get() ?: "")
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
                         {

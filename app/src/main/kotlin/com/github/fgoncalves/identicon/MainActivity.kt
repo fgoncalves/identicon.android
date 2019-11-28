@@ -2,15 +2,15 @@ package com.github.fgoncalves.identicon
 
 import android.Manifest
 import android.content.Intent
-import android.databinding.DataBindingUtil
-import android.databinding.Observable
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.Observable
 import android.os.Build
 import android.os.Bundle
-import android.support.v4.content.ContextCompat
-import android.support.v4.view.MenuItemCompat
-import android.support.v7.app.AlertDialog
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.ShareActionProvider
+import androidx.core.content.ContextCompat
+import androidx.core.view.MenuItemCompat
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.ShareActionProvider
 import android.view.Menu
 import com.github.fgoncalves.androididenticon.identicon.IdenticonImpl
 import com.github.fgoncalves.identicon.databinding.ActivityMainBinding

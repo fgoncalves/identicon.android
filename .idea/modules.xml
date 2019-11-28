@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Desktop-identicon.android.iml" filepath="$PROJECT_DIR$/Desktop-identicon.android.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/identicon.iml" filepath="$PROJECT_DIR$/identicon.iml" />
       <module fileurl="file://$PROJECT_DIR$/identicon.android.iml" filepath="$PROJECT_DIR$/identicon.android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/identicon.android-app.iml" filepath="$PROJECT_DIR$/app/identicon.android-app.iml" />
     </modules>
   </component>
 </project>
